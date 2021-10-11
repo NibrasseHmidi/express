@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>tatlı tuzlu</title>
+
+    <!--META TAGS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!--BOOTSTRAP PLUGIN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--EXTERNAL CSS-->
+    <link rel="shortcut icon" href="images/logo.png">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/contact.css">
+
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Kanit:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pirata+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!--NAVIGATION-->
+    <div id="mySidenav" class="sidenav">
+        <a href="/index.html">Home</a>
+        <a href="/services.html">Our Services</a>
+        <a href="/contact.html">Contact us</a>
+
+    </div>
+    <span style="font-size:30px;cursor:pointer;" class="Navicon" id="Navicon" onclick="openNav()">&#9776;</span>
+    <span onclick="location.reload();" class="logo wrapper" id="logo"><img src="./images/202.png" alt="Organic">
+    </span>
+
+
+    <div>
+        <div class="container">
+            <div class="contact-parent">
+                <div class="contact-child child1">
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i> Address <br />
+                        <span>Metlaoui
+                            <br />
+                           Gafsa
+                        </span>
+                    </p>
+    
+                    <p>
+                        <i class="fas fa-phone-alt"></i> Let's Talk <br />
+                        <span> 00000000</span>
+                    </p>
+    
+                    <p>
+                        <i class=" far fa-envelope"></i> General Support <br />
+                        <span>nibrasse.hmidi@gmail.com</span>
+                    </p>
+                </div>
+    
+                <div class="contact-child child2">
+                    <div class="inside-contact">
+                        <h2>Contact Us</h2>
+                        <h3>
+                            <span id="confirm">
+                        </h3>
+    
+                        <p>Name *</p>
+                        <input id="txt_name" type="text" Required="required">
+    
+                        <p>Email *</p>
+                        <input id="txt_email" type="text" Required="required">
+    
+                        <p>Phone *</p>
+                        <input id="txt_phone" type="text" Required="required">
+    
+                        <p>Subject *</p>
+                        <input id="txt_subject" type="text" Required="required">
+    
+                        <p>Message *</p>
+                        <textarea id="txt_message" rows="4" cols="20" Required="required"></textarea>
+    
+                        <input type="submit" id="btn_send" value="SEND">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="footer">
+            <i class="fa fa-facebook"></i> <i class="fa fa-instagram"></i> <i class="fa fa-envelope"></i> <i
+                class="fa fa-phone"></i>
+     
+        </div>
+    </footer>
+
+
+
+
+    <div id="popup1" class="overlay">
+        <div class="popup"> <a class="close" href="#">&times;</a>
+            <div id="dialog" class="window">
+
+                <div class="box">
+                    <div class="newletter-title">
+                        <h2>ASK FOR A DEMO!</h2>
+                    </div>
+                    <div class="box-content newleter-content">
+                        <label>For any queries, please feel free to contact us</label>
+                        <div id="frm_subscribe">
+                            <form name="subscribe" id="subscribe_popup">
+                                <div>
+                                    <!-- <span class="required">*</span><span>Email</span>-->
+                                    <input type="text" placeholder="Name" value="" name="subscribe_pemail"
+                                        id="subscribe_pemail">
+                                    <input type="email" placeholder="Email" value="" name="subscribe_pname"
+                                        id="subscribe_pemail">
+                                    <input type="tel" placeholder="Contact Number" value="" name="subscribe_pname"
+                                        id="subscribe_pemail">
+                                    <textarea style="height:100px;" placeholder="Message"
+                                        id="subscribe_pemail"></textarea>
+                                    <div id="notification"></div>
+                                    <a class="button" style="width:150px;text-decoration:none;"
+                                        onclick="email_subscribepopup()"><span>Submit</span></a>
+                                </div>
+                            </form>
+
+                        </div>
+                        <!-- /#frm_subscribe -->
+                    </div>
+                    <!-- /.box-content -->
+                </div>
+
+
+
+
+
+
+                <!--javascript-->
+                <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                <script>
+
+
+                    //NAVIGATION
+                    var count = 0;
+                    function openNav() {
+                        if (count == 0) {
+                            document.getElementById("mySidenav").style.width = "250px";
+                            document.getElementById("Navicon").innerHTML = "&#9874;";
+                            if (document.getElementById("logo").style.color = "#000") {
+                                document.getElementById("logo").style.color = "#fff";
+                            }
+                            count++;
+                        } else {
+                            document.getElementById("Navicon").innerHTML = "&#9776;";
+                            document.getElementById("mySidenav").style.width = "0";
+                            count = 0;
+                        }
+                    }
+
+
+                    //SCROLL EVENT
+                    window.onscroll = function () { myFunction() };
+
+                    function myFunction() {
+                        if (document.body.scrollTop > 350 || document.documentElement.scrollTop > 350) {
+                            document.getElementById("Navicon").style.color = "#000";
+                            document.getElementById("Navicon").style.borderColor = "#000";
+                            if (document.getElementById("mySidenav").style.width == "250px") {
+                                document.getElementById("logo").style.color = "#fff";
+                            } else {
+                                document.getElementById("logo").style.color = "#000";
+
+
+                            }
+                        } else {
+                            document.getElementById("logo").style.color = "#fff";
+                            document.getElementById("Navicon").style.color = "#fff";
+                            document.getElementById("Navicon").style.borderColor = "#fff";
+                        }
+                    }
+
+
+                    //SCROLL ANIMATE
+                    var scroll = window.requestAnimationFrame ||
+                        // IE Fallback
+                        function (callback) { window.setTimeout(callback, 1000 / 60) };
+                    var elementsToShow = document.querySelectorAll('.show-on-scroll');
+
+                    function loop() {
+
+                        Array.prototype.forEach.call(elementsToShow, function (element) {
+                            if (isElementInViewport(element)) {
+                                element.classList.add('is-visible');
+                            } else {
+                                element.classList.remove('is-visible');
+                            }
+                        });
+
+                        scroll(loop);
+                    }
+
+                    // Call the loop for the first time
+                    loop();
+
+                    function isElementInViewport(el) {
+                        // special bonus for those using jQuery
+                        if (typeof jQuery === "function" && el instanceof jQuery) {
+                            el = el[0];
+                        }
+                        var rect = el.getBoundingClientRect();
+                        return (
+                            (rect.top <= 0
+                                && rect.bottom >= 0)
+                            ||
+                            (rect.bottom >= (window.innerHeight || document.documentElement.clientHeight) &&
+                                rect.top <= (window.innerHeight || document.documentElement.clientHeight))
+                            ||
+                            (rect.top >= 0 &&
+                                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight))
+                        );
+                    }
+
+
+                </script>
+
+</body>
+
+</html>
